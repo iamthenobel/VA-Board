@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>T#B VA — Home</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .card {
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    .glow {
+      box-shadow: 0 0 20px rgba(37,99,235,0.25);
+    }
+  </style>
+</head>
+
+<body class="bg-[#1a1a1a] text-gray-100 h-screen flex flex-col overflow-hidden">
+
+  <!-- Header -->
+  <header class="p-6 border-b border-[#2a2a2a]">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <h1 class="text-xl font-bold tracking-wide">T#B VA</h1>
+      <span class="text-xs text-gray-500 uppercase tracking-widest">Dashboard</span>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1 overflow-y-auto p-6 no-scrollbar">
+    <div class="max-w-4xl mx-auto">
+
+      <!-- Intro -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold mb-2">Welcome</h2>
+        <p class="text-gray-400 text-sm">Quick access to your tools and resources.</p>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid sm:grid-cols-2 gap-5">
+
+        <!-- Captions -->
+        <a href="captions.html" class="card glow p-5 rounded-2xl bg-[#252525] border border-[#333] flex items-center gap-4">
+          <div class="p-3 rounded-xl bg-blue-600/20 text-blue-400">
+            <i data-feather="copy"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold">Captions and CTA</h3>
+            <p class="text-xs text-gray-400">Copy captions & CTA</p>
+          </div>
+        </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/+-2SRzYEMU5dhN2Yx" target="_blank" class="card p-5 rounded-2xl bg-[#252525] border border-[#333] flex items-center gap-4">
+          <div class="p-3 rounded-xl bg-cyan-600/20 text-cyan-400">
+            <i data-feather="send"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold">Telegram Group</h3>
+            <p class="text-xs text-gray-400">Join community</p>
+          </div>
+        </a>
+
+        <!-- SOP -->
+        <a href="sop.html" class="card p-5 rounded-2xl bg-[#252525] border border-[#333] flex items-center gap-4">
+          <div class="p-3 rounded-xl bg-yellow-600/20 text-yellow-400">
+            <i data-feather="layers"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold">SOP</h3>
+            <p class="text-xs text-gray-400">Standard procedures</p>
+          </div>
+        </a>
+
+        <!-- Spreadsheet -->
+        <a href="https://docs.google.com/spreadsheets/d/1s0Ggk6VfnjLavBEPl6o1A-S14Bd-ck9ocM_uHhwVHHs/edit?usp=drivesdk" class="card p-5 rounded-2xl bg-[#252525] border border-[#333] flex items-center gap-4 sm:col-span-2">
+          <div class="p-3 rounded-xl bg-green-600/20 text-green-400">
+            <i data-feather="grid"></i>
+          </div>
+          <div>
+            <h3 class="font-semibold">Spreadsheet</h3>
+            <p class="text-xs text-gray-400">Track & manage data</p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    feather.replace();
+
+    // Smooth click feedback animation
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.add('scale-95');
+        setTimeout(() => card.classList.remove('scale-95'), 150);
+      });
+    });
+  </script>
+
+</body>
+</html>
